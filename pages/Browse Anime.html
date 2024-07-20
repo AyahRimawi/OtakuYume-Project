@@ -4,138 +4,246 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Browse Anime</title>
+    <!-- Bootstrap CSS -->
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome 6 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper CSS -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-..."
-      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="/assets/styles/sidebar-nav.css" />
-    <link rel="stylesheet" href="/assets/styles/topratedpage.css" />
 
-    <style>
-      .form-select {
-        padding: 0.8rem 1rem;
-        margin: 0.5rem;
-        width: 300px;
-        background-color: #000;
-        color: #b43feb;
-        border: 2px solid #b43feb;
-        border-radius: 8px;
-        font-size: 1rem;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        background-image: url('data:image/svg+xml;utf8,<svg fill="%23B43FEB" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-        background-repeat: no-repeat;
-        background-position-x: 95%;
-        background-position-y: center;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-      }
+    <!-- Bootstrap Icons CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-      .form-select:focus {
-        outline: none;
-        box-shadow: 0 0 10px #b43feb;
-      }
-
-      .form-select option {
-        background-color: #000;
-        color: #b43feb;
-        transition: background-color 0.3s, color 0.3s;
-      }
-
-      .form-select option:hover {
-        background-color: #b43feb;
-        color: #cc3535;
-      }
-    </style>
+    <!-- Font Awesome 5.15.4 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="../assets/styles/Browse Anime.css" />
   </head>
-  <body>
-    <!-- navbar -->
-    <div class="navbar">
-      <div class="navbar-container">
-        <div class="logo-container">
-          <h1 id="logo"></h1>
-          ANIMOVES
-        </div>
-        <div class="menu-container">
-          <ul class="ulNavbar"></ul>
-          <li class="liNavbar active">
-            <a
-              href="http://127.0.0.1:5501/index.html"
-              style="text-decoration: none"
-              >Home</a
+
+  <body
+    style="
+      background-color: black;
+      font-family: 'BankaiDemoVersion', sans-serif;
+    "
+  >
+    <!-------------------------------------------------- Header --------------------------------------------------------->
+    <header>
+      <nav class="navbar navbar-expand-lg" style="background-color: #000">
+        <div class="container-fluid">
+          <button
+            style="
+              color: white;
+              font-size: 1rem;
+              box-shadow: 1px 1px 1px #b43deb;
+              order: 2;
+            "
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="bi bi-list" style="color: #b43deb"></i>
+          </button>
+
+          <a
+            class="navbar-brand me-auto"
+            href="http://127.0.0.1:5502/index.html?#"
+          >
+            <img
+              src="../assets/images/logo.png"
+              alt="Logo"
+              width="50"
+              height="50"
+              class="d-inline-block align-text-top"
+            />
+          </a>
+          <a
+            class="navbar-brand"
+            href="http://127.0.0.1:5502/index.html?#"
+            style="color: #b43feb; margin-top: 0.45rem"
+            >OtakuYume</a
+          >
+
+          <div
+            class="collapse navbar-collapse"
+            id="navbarTogglerDemo03"
+            style="
+              justify-content: center;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            "
+          >
+            <ul
+              class="navbar-nav me-auto mb-2 mb-lg-0"
+              style="align-items: center; font-size: 1rem; margin-top: 0.45rem"
             >
-          </li>
-          <li class="liNavbar">
-            <a href="#" style="text-decoration: none">Movies</a>
-          </li>
-          <li class="liNavbar">Series</li>
-        </div>
-        <!-- searchbar -->
-        <div class="searchbar">
-          <input id="search-input" type="text" placeholder="Search ..." />
-          <button id="search-button">Search</button>
-        </div>
-        <!-- ................... -->
-        <div class="profile-container">
-          <div class="search-icon">
-            <span class="fas fa-search"> </span>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="http://127.0.0.1:5502/index.html?#"
+                  style="color: #ffffff; margin-right: 20px"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="http://127.0.0.1:5502/pages/Browse%20Anime.html"
+                  style="color: #b43feb; margin-right: 20px"
+                  >Browse Anime</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="http://127.0.0.1:5502/pages/contactUs.html"
+                  style="color: white; margin-right: 20px"
+                  >Contact us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="http://127.0.0.1:5502/pages/aboutUs.html"
+                  style="color: white; margin-right: 20px"
+                  >About us</a
+                >
+              </li>
+            </ul>
           </div>
           <div>
-            <img id="user-picture" src="/assets/images/user.png" alt="" />
-            <i class="fas fa-caret-down"></i>
+            <form class="d-flex" role="search">
+              <button
+                id="logout"
+                class="btn"
+                type="submit"
+                style="color: #b43deb; border: none; font-weight: 600"
+              >
+                <a
+                  class="nav-link"
+                  href="http://127.0.0.1:5502/pages/login.html"
+                  style="color: #b43deb"
+                >
+                  <i class="bi bi-door-open-fill" style="color: #b43deb"></i
+                  >Logout</a
+                >
+              </button>
+            </form>
           </div>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
+    <!----------------------------------------------- End Header --------------------------------------------------------->
 
-    <!-- sidebar -->
-    <div>
-      <div class="sidebar" id="sidebar"></div>
-    </div>
-
-    <!-- containar -->
-
-    <div class="Browse Anime">
-      <h2>Browse Anime</h2>
-      <div
-        style="
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-top: 5rem;
-        "
+    <!----------------------------------------------- Main --------------------------------------------------------->
+    <main style="margin-top: 3rem">
+      <!---------------Search Section----------------->
+      <section
+        class="d-flex justify-content-around flex-wrap"
+        style="flex-direction: column; align-items: center"
       >
-        <select
-          id="anitype"
-          class="form-select"
-          aria-label="Default select example"
+        <div
+          class="input-group rounded custom-input-group mb-3"
+          style="
+            width: 30rem;
+            border: 2px solid #b43feb;
+            background-color: rgba(0, 0, 0, 0.2);
+          "
         >
-          <option value="tv">TV</option>
-          <option value="movie">Movie</option>
-          <option value="ova">OVA</option>
-          <option value="special">Special</option>
-        </select>
+          <input
+            id="searchBox"
+            type="search"
+            class="form-control rounded"
+            placeholder="Search"
+            aria-label="Search"
+            class="fas fa-search"
+            aria-describedby="search-addon"
+            style="
+              height: 2.5rem;
+              border-color: #b43feb;
+              color: #ffffff;
+              background-color: black;
+            "
+          />
+           <span class="input-group-text" id="search-addon" style="background-color: #000;">
+        <i style="color: #ffffff;" class="fas fa-search"></i>
+        </div>
+        <!---------------dropdown Section----------------->
+        <div class="d-flex gap-1 select-container" style="gap: 4rem; margin-top: 1.25rem; ">
+          <div>
+            <select id="sortBy" class="form-select custom-select mb-3"  style="width: 15rem; text-align: center; padding-top: 0.7rem; color:white; background-color: #000;">
+              <option value="true">Top Rated</option>
+              <option value="false">Popularity</option>
+              <option value="false">Title</option>
+            </select>
+          </div>
+          <div>
+            <select id="anitype" class="form-select custom-select mb-3"  style="width: 15rem; text-align: center; padding-top: 0.7rem; color:white; background-color: #000;">
+              <option value="">Anime Genre</option>
+              <option value="tv">TV</option>
+              <option value="movie">Movie</option>
+              <option value="ova">OVA</option>
+              <option value="special">Special</option>
+            </select>
+          </div>
+          <div>
+            <select id="ageRating" class="form-select custom-select mb-3"  style="width: 15rem; text-align: center; padding-top: 0.7rem; color:white; background-color: #000;">
+              <option value="">Age Group</option>
+              <option value="g">G - All Ages</option>
+              <option value="pg">PG - Children</option>
+              <option value="pg13">PG-13 - Teens 13 or older</option>
+              <option value="r17">R - 17+ (violence & profanity)</option>
+            </select>
+          </div>
+        </div>
+        <!-- <div
+          class="input-group rounded custom-input-group mb-3"
+          style="width: 30rem"
+        >
+          <input
+            id="searchBox"
+            type="search"
+            class="form-control rounded"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="search-addon"
+            style="height: 2.5rem"
+          />
+        </div> -->
+      </section>
+      <!-- loading  -->
+      <div id="loading-text" style="text-align: center; margin-top: 20px"></div>
 
-        <select
-          id="ageRating"
-          class="form-select"
-          aria-label="Default select example"
-        >
-          <option value="g">G - All Ages</option>
-          <option value="pg">PG - Children</option>
-          <option value="pg13">PG-13 - Teens 13 or older</option>
-          <option value="r17">R - 17+ (violence & profanity)</option>
-        </select>
-      </div>
-      <div class="movie-grid">
-        <section id="main-section"></section>
+      <!---------------Cards Section----------------->
+
+      <section style="margin-top: 3rem" id="displayAnime">
+        <div class="container text-center">
+          <div id="container-inner" class="row" style="gap: 1rem">
+            <!-- Cards will be dynamically added here -->
+          </div>
+        </div>
+      </section>
+
+      <section id="pagination-section" style="margin-bottom: 3rem">
         <div class="pages" id="pages">
           <button>1</button>
           <button>2</button>
@@ -143,10 +251,45 @@
           <button>4</button>
           <button>5</button>
         </div>
+      </section>
+    </main>
+    <footer
+      class="text-center text-white py-3 mt-auto"
+      style="box-shadow: 1px 1px 1px #000000"
+    >
+      <div class="container">
+        <!-- Social media icons -->
+        <a class="btn btn-link btn-floating btn-lg text-white m-1" href="#!"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a class="btn btn-link btn-floating btn-lg text-white m-1" href="#!"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a class="btn btn-link btn-floating btn-lg text-white m-1" href="#!"
+          ><i class="fab fa-google"></i
+        ></a>
+        <a class="btn btn-link btn-floating btn-lg text-white m-1" href="#!"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <!-- Copyright notice -->
+        <div style="color: whitesmoke">© 2024 OkatuYume.com</div>
       </div>
-    </div>
+    </footer>
 
-    <script src="../assets/scripts/sidebar.js"></script>
-    <script src="../assets/scripts/Browse Anime.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/scripts/Browse Anime.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 const linksSidebar = [
-  { nameSidebar: "MENU", noHover: true },
+  // { nameSidebar: "MENU", noHover: true },
   { nameSidebar: "Home", url: "/index.html", iconSidebar: "fas fa-home" },
 
   {
@@ -7,11 +7,19 @@ const linksSidebar = [
     url: "/pages/Browse Anime.html",
     iconSidebar: "fas fa-filter",
   },
+  // {
+  //   nameSidebar: "Top Rated",
+  //   url: "/pages/topratedpage.html",
+  //   iconSidebar: "far fa-star",
+  // },
   {
-    nameSidebar: "Top Rated",
-    url: "/pages/topratedpage.html",
-    iconSidebar: "far fa-star",
+    nameSidebar: "Movie Detiles",
+    url: "#",
+    iconSidebar: "fas fa-info-circle",
+    id: "MovieDetiles",
+    style: "color: #b43deb;",
   },
+
   {
     nameSidebar: "About us",
     url: "/pages/aboutUs.html",
@@ -25,16 +33,22 @@ const linksSidebar = [
     iconSidebar: "fas fa-envelope",
   },
 
-  { nameSidebar: "Setting", url: "/pages/profile.html", iconSidebar: "fas fa-cog" },
+  {
+    nameSidebar: "Setting",
+    url: "/pages/profile.html",
+    iconSidebar: "fas fa-cog",
+    id: "settingPage",
+  },
   {
     nameSidebar: "Log out",
     url: "/index.html",
     iconSidebar: "fas fa-sign-out-alt",
-    id: "logouttest"
+    id: "logouttest",
   },
 ];
 
 const sidebar = document.getElementById("sidebar");
+
 const ulSidebar = document.createElement("ul");
 
 linksSidebar.forEach((link) => {
@@ -68,11 +82,11 @@ linksSidebar.forEach((link) => {
 
 sidebar.appendChild(ulSidebar);
 
-
 const logoutButton = document.getElementById("logouttest");
 
 logoutButton.addEventListener("click", () => {
   sessionStorage.removeItem("userID");
+  sessionStorage.removeItem("userName");
   signOut(auth)
     .then(() => {
       window.location.href = "../index.html";
@@ -81,3 +95,12 @@ logoutButton.addEventListener("click", () => {
       console.error("Error signing out:", error);
     });
 });
+
+if (sessionStorage.getItem("userID", null) === null) {
+  let logout = document.getElementById("logouttest");
+  logout.style.display = "none";
+}
+if (sessionStorage.getItem("userID", null) === null) {
+  let settingPage = document.getElementById("settingPage");
+  settingPage.style.display = "none";
+}

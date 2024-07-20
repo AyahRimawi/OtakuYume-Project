@@ -1,4 +1,3 @@
-
 // the api
 function Anime(id, title, synopsis, episodes, imageUrl, score) {
   this.id = id;
@@ -26,7 +25,7 @@ async function fetchAnimeAndRender(search, page) {
     }
 
     // Limit to first 20 results for simplicity
-    const animeList = data.data.slice(0, 20);
+    const animeList = data.data.slice(0, 18);
 
     // Map through anime and create Anime objects
     const animeObjects = animeList.map((anime) => {
@@ -57,7 +56,6 @@ function renderAnime(animeList) {
     const card = document.createElement("div");
     card.setAttribute("class", "movie-card");
     // card.classList.add("card");
-       
 
     card.innerHTML = `
       <img src="${anime.imageUrl}" alt="${anime.title}">
@@ -74,12 +72,12 @@ function renderAnime(animeList) {
 // Call fetchAnimeAndRender with a default search query when the page loads
 window.onload = function () {
   fetchAnimeAndRender(""); // Default search query example ('naruto')
-// pagenation
+  // pagenation
   const pages = document.getElementById("pages");
-  
+
   pages.addEventListener("click", (event) => {
     const pageNumber = event.target.innerHTML;
-    fetchAnimeAndRender("", pageNumber); 
+    fetchAnimeAndRender("", pageNumber);
   });
 };
 
@@ -94,7 +92,8 @@ document.querySelector(".search-icon").addEventListener("click", function () {
 async function fetchAnimeAndRender(search, page) {
   try {
     const response = await fetch(
-      `https://api.jikan.moe/v4/anime?q=${search}&limit=20&page=${page || 1}`
+      `https://api.jikan.moe/v4/top/anime?page=${page || 1}
+`
     );
     if (!response.ok) {
       throw new Error("Network response was not ok.");
@@ -124,12 +123,11 @@ async function fetchAnimeAndRender(search, page) {
 
     // Render anime
     renderAnime(animeObjects);
-    
   } catch (error) {
     console.error("Error fetching or rendering anime:", error);
     // Handle error appropriately (e.g., show error message to user)
   }
- } 
+}
 
 function renderAnime(animeList) {
   const mainSection = document.getElementById("main-section");
@@ -140,7 +138,7 @@ function renderAnime(animeList) {
     card.setAttribute("class", "movie-card");
     card.innerHTML = `
     
-          <a href = "Movie detiles.html?animeId=${anime.id}">
+      <a href = "Movie detiles.html?animeId=${anime.id}&uu=99">
         <img src="${anime.imageUrl}" alt="${anime.title}">
       <div>
         <h2>${anime.title}</h2>

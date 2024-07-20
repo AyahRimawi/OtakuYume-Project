@@ -12,15 +12,56 @@
     />
     <link rel="stylesheet" href="/assets/styles/topratedpage.css" />
     <link rel="stylesheet" href="../assets/styles/sidebar-nav.css" />
+
+    <!-- <style>
+      #navbar {
+          padding: 1rem;
+    background-color:black;
+      }
+    
+      #search-input {
+          border-radius: 24px;
+          padding: 0.5rem 1rem;
+          border: 1px solid #B43FEB;
+          background-color: transparent;
+          color: white;
+          transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    
+      #search-input::placeholder {
+          color: #B43FEB;
+      }
+    
+      #search-input:focus {
+          background-color: #B43FEB;
+          color: white;
+      }
+    
+      #search-button {
+          margin-right: 4rem;
+          background-color: #B43FEB;
+          color: white;
+          border-radius: 24px;
+          border: none;
+          padding: 0.5rem 1rem;
+          transition: background-color 0.3s ease;
+      }
+    
+      #search-button:hover {
+          background-color: white;
+          color: #B43FEB;
+      }
+    </style> -->
+
   </head>
   <body>
     <!-- Navbar -->
-    <div class="navbar">
+    <!-- <div class="navbar">
       <div class="navbar-container">
         <div class="logo-container">
-          <h1 id="logo"></h1>
+          <h1 id="logo"></h1> -->
           <!-- <h1 class="maintitle">Top Rated</h1> -->
-        </div>
+        <!-- </div>
         <div class="menu-container">
           <ul class="ulNavbar">
             <li class="liNavbar active">
@@ -31,9 +72,9 @@
             </li>
             <li class="liNavbar">Series</li>
           </ul>
-        </div>
+        </div> -->
         <!-- Searchbar -->
-        <div class="searchbar">
+        <!-- <div class="searchbar">
           <input id="search-input" type="text" placeholder="Search ..." />
           <button id="search-button">Search</button>
         </div>
@@ -47,10 +88,59 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Sidebar -->
-    <div class="sidebar" id="sidebar"></div>
+    <!-- <div class="sidebar" id="sidebar"></div> -->
+
+  <!-- navbar -->
+  <div class="navbar">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div class="logo-container" style="font-size: x-large; color: #ffffff; text-shadow: 1px 4px 4px #b43feb !important; margin: 2rem;">
+      <h1 id="logo" ></h1>
+      OtakuYume
+    </div>
+    
+    </div>
+    <!-- searchbar -->
+    <div class="searchbar">
+      <input id="search-input" type="text" placeholder="Search ..." />
+      <button id="search-button">Search</button>
+    </div>
+    <!-- ................... -->
+    <!-- <div class="profile-container">
+      <div class="search-icon">
+        <span class="fas fa-search"> </span>
+      </div>
+      <div>
+        <img id="user-picture" src="/assets/images/user.png" alt="" />
+        <i class="fas fa-caret-down"></i>
+      </div>
+    </div> -->
+
+  </div>
+
+  <!-- sidebar -->
+  <main style="display: grid; grid-template-columns: 15% 85%;">
+    <section>
+      <div class="sidebar" id="sidebar"></div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Main Container -->
     <div class="top-rated">
